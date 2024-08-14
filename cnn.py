@@ -1,3 +1,13 @@
+'''
+cnn.py:
+    contains a function, createModel(), which creates a image classification convolutional neural network with
+    10 layers, such that the required  input must be images of size 150 x 150 (scaled for decreased training time) 
+    and trains the model with images located in subdirectories of the provided directory parameter, directory.
+
+    Each subdirectory in directory is considered a class for classification
+
+'''
+
 
 from keras.metrics import BinaryAccuracy, Precision, Recall
 from keras import layers, Model
@@ -86,7 +96,7 @@ def createModel(directory):
         image_size=(imageSize, imageSize), # size that images in subdirectories will be scaled to; set to 512 as we don't want any scaling 
         batch_size=20,
         label_mode='binary',  # Since we use binary_crossentropy loss, we need binary labels
-        validation_split=0.2,  # Split 20% for validation if needed
+        validation_split=0.2,  # Split 20% for validation and 80% for training
         subset="training",
         seed=100 
     )

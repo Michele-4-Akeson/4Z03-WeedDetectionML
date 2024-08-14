@@ -1,6 +1,20 @@
+'''
+augmentations.py:
+    This script performs two data augmentation techniques (flipping and color transformation). 
+    by iterating through all images in the weed and crop subdirectories:
+        - flipping:
+            weed and crop images are copied to new data/flippedData/ directory
+            new weed and crop images are created from original images with flipping geometric transformation
+
+        - color transformation:
+            weed and crop images are converted to gray scale and copied to new data/colorlessData/
+
+'''
+
 import os, shutil
 import re
 from PIL import Image, ImageOps
+
 
 sortedWeedImageDirectory = "data/sortedData/weed"
 sortedCropImageDirectory = "data/sortedData/crop"

@@ -1,3 +1,12 @@
+'''
+graphResults.py
+    contains two functions, savePlot(), and graphAndSaveResults(), which are used to plot the captured
+    metrics of training a cnn model.
+
+    These functions work to graph training and validation vs. Epochs for loss, accuracy, precision, and recall,
+    and then save those graphs to the results folder
+'''
+
 import matplotlib.pyplot as plt
 
 
@@ -6,7 +15,7 @@ import matplotlib.pyplot as plt
 def save_plot(data, val_data, title, ylabel, filename):
     '''
     plots a graph with title, title, displaying data vs. epochs and val_data vs. epochs
-    and then saves said plot to at filename
+    and then saves said plot with filename
     '''
     plt.figure(figsize=(8, 6))
     plt.plot(data, label='Train')
@@ -20,7 +29,11 @@ def save_plot(data, val_data, title, ylabel, filename):
     plt.close()
 
 
-def graphAndSaveResults(history, experimentName):
+def graphAndSaveResults(history, graphTitle):
+    '''
+    Extracts the required values from the model's training history, history,
+    and saves 4 graphs to the results folder with a title, graphTitle
+    '''
 
     loss = history.history['loss']
     accuracy = history.history['accuracy']
@@ -38,36 +51,36 @@ def graphAndSaveResults(history, experimentName):
     save_plot(
         accuracy, 
         val_accuracy,
-        f'{experimentName} Model Accuracy',
+        f'{graphTitle} Model Accuracy',
         'Accuracy',
-        f'{experimentName}_accuracy_plot.png'
+        f'{graphTitle}_accuracy_plot.png'
     )
 
     # Save loss plot
     save_plot(
         loss, 
         val_loss,
-         f'{experimentName} Model Loss',
+         f'{graphTitle} Model Loss',
         'Loss',
-        f'{experimentName}_loss_plot.png'
+        f'{graphTitle}_loss_plot.png'
     )
 
     # Save precision plot
     save_plot(
     precision, 
     val_precision,
-         f'{experimentName} Model Precision',
+         f'{graphTitle} Model Precision',
         'Precision',
-        f'{experimentName}_precision_plot.png'
+        f'{graphTitle}_precision_plot.png'
     )
 
     # Save recall plot
     save_plot(
         recall, 
         val_recall,
-        f'{experimentName} Model Recall',
+        f'{graphTitle} Model Recall',
         'Recall',
-        f'{experimentName}_recall_plot.png'
+        f'{graphTitle}_recall_plot.png'
     )
 
 

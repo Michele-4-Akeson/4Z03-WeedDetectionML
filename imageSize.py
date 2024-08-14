@@ -1,3 +1,11 @@
+'''
+imageSize.py:
+    This script is used to determine the max and minimum size images contained in the crop/weed dataset.
+    It was determined that all images are of size 512 x 512 px
+'''
+
+
+
 import os
 import sys
 from PIL import Image

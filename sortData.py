@@ -1,3 +1,14 @@
+'''
+sortData.py:
+    This script sorts images of crops and weeds into separate directories based on their annotations. 
+    It reads image and annotation files, validates their corresponding file, and then categorizes each image by copying it into a 
+    weed/ or crop/ directory according to the "object.classTitle" label in the associated JSON file. 
+    
+    The script finally reports the count of images in each category (666 weeds and 634 crops).
+'''
+
+
+
 import os, shutil, re, json
 
 imageDirectory = 'data/data/img'
