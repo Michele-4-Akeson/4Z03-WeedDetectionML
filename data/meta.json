@@ -1,0 +1,22 @@
+{
+    "classes": [
+        {
+            "title": "crop",
+            "shape": "rectangle",
+            "color": "#F8E71C",
+            "geometry_config": {},
+            "id": 21385,
+            "hotkey": ""
+        },
+        {
+            "title": "weed",
+            "shape": "rectangle",
+            "color": "#D0021B",
+            "geometry_config": {},
+            "id": 21387,
+            "hotkey": ""
+        }
+    ],
+    "tags": [],
+    "projectType": "images"
+}

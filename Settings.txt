@@ -1,0 +1,20 @@
+Run The following command in terminal to start virtual environment:
+
+> source venv/bin/activate   (starts virtual environment where we can install python stuff)
+
+
+> pip list                    (shows packages we have)
+
+
+> deactivate                  (ends virtual environment)
+
+
+
+
+
+Helpful Commands:
+
+> play -n synth 0.3 sine 1000   (makes sort beep on vm)
+
+
+> notify-send "Task Complete" "Your task has finished running."
